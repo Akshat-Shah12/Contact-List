@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import "tailwindcss/tailwind.css";
+import "./App.css";
+import React, { useState } from "react";
+import Header from "./components/Header";
+import AddContact from "./components/AddContact";
+import ContactList from "./components/ContactList";
+import ContactCard from "./components/ContactCard";
 
 function App() {
+  const [contacts, setcontacts] = useState([]);
+  // const contacts=[
+  //   {
+  //     id:"1",
+  //     name:"Akshat Shah",
+  //     email:"adknd@gmail.com",
+  //   },
+  //   {
+  //     id:"2",
+  //     name:"Kknd Shah",
+  //     email:"dd@gmail.com",
+  //   }
+  // ];
+  const addContactHandler = (contact) => {
+    console.log(contact);
+    setcontacts([...contacts, contact]);
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <br />
+      <AddContact addContactHandler={addContactHandler} />
+      <br />
+      <ContactList contacts={contacts} />
+      <ContactCard />
+    </>
   );
 }
 
