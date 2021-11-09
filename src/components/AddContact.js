@@ -18,7 +18,6 @@ class AddContact extends React.Component {
     this.setState({ name: "", email: "" });
     console.log(this.state);
   };
-  
   render() {
     return (
       <div className="p-6 max-w-sm mx-auto items-center">

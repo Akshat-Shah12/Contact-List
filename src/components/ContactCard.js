@@ -16,7 +16,6 @@ const ContactCard = (props) => {
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
-        onClick={()=>props.clickHandler(id)}
       >
         <path
           strokeLinecap="round"
